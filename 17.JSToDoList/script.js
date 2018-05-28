@@ -1,4 +1,4 @@
-var todos = [];
+var todos = ["Ihor", "Olha"];
 window.setTimeout(function() {
 
     do{
@@ -9,8 +9,16 @@ window.setTimeout(function() {
         }
 
         if (input === "list"){
-            alert(todos);
+            todos.forEach(function(element, i){
+                console.log(i +": "+element)
+            });
         }
+
+        if (input === "delete"){
+            var i = prompt("Please enter an index of todo which you want to delete.")
+            todos.splice(i, 1);
+        }
+
     } while (input !== "quit");
 
 }, 500);
